@@ -14,7 +14,6 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.3 0.15 0.1"/>
-        <!-- length x width x height -->
       </geometry>
       <material name="red">
         <color rgba="0.9 0.2 0.2 1.0"/>
@@ -24,9 +23,14 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.3 0.15 0.1"/>
-        <!-- length x width x height -->
       </geometry>
     </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.5"/>
+      <inertia ixx="0.00344" iyy="0.01219" izz="0.01519"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
   </link>
 
   <!-- Lidar -->
@@ -44,6 +48,12 @@
         <cylinder radius="0.03" length="0.05"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.000064" iyy="0.000064" izz="0.000045"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
   </link>
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
@@ -68,15 +78,19 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
   </link>
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <!-- <origin xyz="-0.12 0.1035 0" rpy="1.57 0 0"/> -->
     <origin xyz="-0.12 0.1035 -0.035" rpy="1.57 0 0"/>
     <axis xyz="0.0 0.0 1.0"/>
   </joint>
-
 
   <!-- Right wheel -->
   <link name="right_wheel">
@@ -95,14 +109,18 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
   </link>
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <!-- <origin xyz="-0.12 -0.1035 0" rpy="1.57 0 0"/> -->
     <origin xyz="-0.12 -0.1035 -0.035" rpy="1.57 0 0"/>
     <axis xyz="0.0 0.0 1.0"/>
-
   </joint>
 
   <!-- Front caster wheel -->
@@ -120,12 +138,13 @@
         <sphere radius="0.02"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.000016" iyy="0.000016" izz="0.000016"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
   </link>
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="caster_wheel"/>
-    <origin xyz="0.1 0 -0.067" rpy="0 0 0"/>
-    <!-- front/center, near ground -->
-  </joint>
-
-</robot>
+    <child link="caster_wheel_
