@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'scout_publisher = scoutbot_py_test.publisher:main',
+            'scout_parameter = scoutbot_py_test.parameters:main',
+            'scout_subscriber = scoutbot_py_test.subscriber:main',
         ],
     },
 )
