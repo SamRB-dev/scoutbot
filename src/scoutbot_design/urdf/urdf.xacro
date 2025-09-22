@@ -7,7 +7,7 @@
     <child link="base_link"/>
     <origin xyz="0 0 0.05" rpy="0 0 0"/>
   </joint>
-  
+
   <!-- Base box -->
   <link name="base_link">
     <visual>
@@ -20,6 +20,13 @@
         <color rgba="0.9 0.2 0.2 1.0"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.15 0.1"/>
+        <!-- length x width x height -->
+      </geometry>
+    </collision>
   </link>
 
   <!-- Lidar -->
@@ -32,6 +39,11 @@
         <color rgba="1.0 0.5 0.1 1.0"/>
       </material>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.03" length="0.05"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
@@ -50,6 +62,12 @@
         <color rgba="0.0 0.0 0.0 1.0" />
       </material>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.05"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -71,6 +89,12 @@
         <color rgba="0.0 0.0 0.0 1.0" />
       </material>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.05"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -91,6 +115,11 @@
         <color rgba="0.6 0.6 0.6 1.0"/>
       </material>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
