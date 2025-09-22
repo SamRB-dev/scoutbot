@@ -5,7 +5,7 @@ from rclpy.parameter import Parameter
 
 class ParameterNode(Node):
     def __init__(self):
-        super().__init__('parameter_node')
+        super().__init__('scoutbot_parameter_node')
         
         self.declare_parameter('simple_int_param', 28)
         self.declare_parameter('simple_str_param', 'Hello, ROS2!')
