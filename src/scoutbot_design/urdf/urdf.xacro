@@ -28,8 +28,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="1.5"/>
-      <inertia ixx="0.00344" iyy="0.01219" izz="0.01519"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <inertia ixx="0.00344" iyy="0.01219" izz="0.01519" ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
 
@@ -51,8 +50,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.05"/>
-      <inertia ixx="0.000064" iyy="0.000064" izz="0.000045"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <inertia ixx="0.000064" iyy="0.000064" izz="0.000045" ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
   <joint name="lidar_joint" type="fixed">
@@ -81,8 +79,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.15"/>
-      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019" ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
   <joint name="left_wheel_joint" type="continuous">
@@ -112,8 +109,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.15"/>
-      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <inertia ixx="0.00019" iyy="0.00013" izz="0.00019" ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
   <joint name="right_wheel_joint" type="continuous">
@@ -141,10 +137,13 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.05"/>
-      <inertia ixx="0.000016" iyy="0.000016" izz="0.000016"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <inertia ixx="0.000016" iyy="0.000016" izz="0.000016" ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="caster_wheel_
+    <child link="caster_wheel"/>
+    <origin rpy="0 0 0" xyz="0.1 0 -0.067"/>
+    <!-- front/center, near ground -->
+  </joint>
+</robot>
